@@ -1,0 +1,202 @@
+.main-header {
+  background: linear-gradient(135deg, #000000 0%, #1a0000 50%, #000000 100%);
+  border-bottom: 3px solid #ff0000;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-moto {
+  font-size: 2.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.logo h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.logo-highlight {
+  color: #ff0000;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid #ff0000;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ff0000;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.nav-btn:hover::before {
+  left: 0;
+}
+
+.nav-btn:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .nav-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  
+  .logo-moto {
+    font-size: 2rem;
+  }
+  
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .logo-moto {
+    font-size: 1.8rem;
+  }
+  
+  .nav-buttons {
+    gap: 0.5rem;
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 540px) {
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .logo-moto {
+    font-size: 1.5rem;
+  }
+  
+  .nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .nav-btn {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo h1 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .logo-moto {
+    font-size: 1.3rem;
+  }
+  
+  .nav-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.6rem;
+  }
+}

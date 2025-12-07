@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<main class="marca-page">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://soymotero.net/wp-content/uploads/2020/08/suzuki_gs750_1978.jpg');">
+    <h1>SUZUKI</h1>
+    <p>Estilo de vida</p>
+  </div>
+
+  <section class="modelos-section">
+    <h2>MODELOS <span>SUZUKI</span></h2>
+    <p>6 modelos disponibles</p>
+
+    <div class="motos-grid">
+      @for (moto of motos; track moto.modelo) {
+        <div class="moto-card">
+          <div class="moto-image">
+            <img [src]="moto.imagen" [alt]="moto.modelo">
+            <span class="marca-badge">SUZUKI</span>
+          </div>
+          <div class="moto-info">
+            <h3>{{moto.modelo}}</h3>
+            <p class="descripcion">{{moto.descripcion}}</p>
+            <div class="specs">
+              <span>🏍️ {{moto.cilindraje}}</span>
+              <span>⚡ {{moto.potencia}}</span>
+            </div>
+            <div class="precio">{{moto.precio}}</div>
+            <button class="btn-detalles">Ver detalles</button>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>
