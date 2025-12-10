@@ -25,12 +25,93 @@
               <span>⚡ {{moto.potencia}}</span>
             </div>
             <div class="precio">{{moto.precio}}</div>
-            <button class="btn-detalles">Ver detalles</button>
+            <button class="btn-detalles" (click)="abrirModal(moto)">Ver detalles</button>
           </div>
         </div>
       }
     </div>
   </section>
 </main>
+
+<!-- Modal de Detalles -->
+<div class="modal-overlay" *ngIf="showModal" (click)="cerrarModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()" *ngIf="motoSeleccionada">
+    <button class="close-btn" (click)="cerrarModal()">✕</button>
+    
+    <div class="modal-header">
+      <div class="modal-marca-badge">YAMAHA</div>
+      <h2 class="modal-title">{{motoSeleccionada.modelo}}</h2>
+      <p class="modal-subtitle">{{motoSeleccionada.descripcion}}</p>
+    </div>
+
+    <div class="modal-body">
+      <div class="detail-section">
+        <h3>Motor y Rendimiento</h3>
+        <div class="detail-item">
+          <span class="detail-label">Motor:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.motor}}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Potencia:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.potenciaDetallada}}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Torque:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.torque}}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Velocidad Máxima:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.velocidadMax}}</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Transmisión y Chasis</h3>
+        <div class="detail-item">
+          <span class="detail-label">Transmisión:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.transmision}}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Peso:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.peso}}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Capacidad Tanque:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.tanque}}</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Frenos y Suspensión</h3>
+        <div class="detail-item">
+          <span class="detail-label">Frenos:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.frenos}}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Suspensión:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.suspension}}</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Electrónica y Asistencias</h3>
+        <div class="detail-item">
+          <span class="detail-label">Sistemas:</span>
+          <span class="detail-value">{{motoSeleccionada.detalles?.electronica}}</span>
+        </div>
+      </div>
+
+      <div class="modal-price">
+        <span class="price-label">Precio:</span>
+        <span class="price-value">{{motoSeleccionada.precio}}</span>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-modal-close" (click)="cerrarModal()">Cerrar</button>
+      <button class="btn-modal-contact">Contactar Vendedor</button>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

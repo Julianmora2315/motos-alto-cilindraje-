@@ -1,27 +1,31 @@
 .main-header {
-  background: linear-gradient(135deg, #000000 0%, #1a0000 50%, #000000 100%);
-  border-bottom: 3px solid #ff0000;
-  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 50%, #0a0a0a 100%);
+  border-bottom: 3px solid #dc2626;
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .header-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo:hover {
@@ -30,42 +34,47 @@
 
 .logo-moto {
   font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.5));
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .logo h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #ffffff;
   margin: 0;
   letter-spacing: 3px;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
 }
 
 .logo-highlight {
-  color: #ff0000;
-  text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+  color: #dc2626;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.9);
 }
 
-.nav-buttons {
+/* Navegación principal */
+.main-nav {
   display: flex;
+  align-items: center;
   gap: 0.8rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
+.main-nav::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Todos los botones con el mismo estilo */
 .nav-btn {
   background: transparent;
   color: white;
-  border: 2px solid #ff0000;
+  border: 2px solid #dc2626;
   padding: 0.7rem 1.5rem;
   font-size: 0.85rem;
   font-weight: bold;
@@ -85,7 +94,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #ff0000;
+  background: #dc2626;
   transition: left 0.3s ease;
   z-index: -1;
 }
@@ -97,7 +106,7 @@
 .nav-btn:hover {
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
 }
 
 .nav-btn:active {
@@ -124,11 +133,7 @@
     font-size: 1.8rem;
   }
   
-  .logo-moto {
-    font-size: 2rem;
-  }
-  
-  .nav-buttons {
+  .main-nav {
     width: 100%;
     justify-content: center;
   }
@@ -145,10 +150,10 @@
   }
   
   .logo-moto {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
-  .nav-buttons {
+  .main-nav {
     gap: 0.5rem;
   }
   
@@ -165,12 +170,12 @@
   }
   
   .logo-moto {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   
-  .nav-buttons {
+  .main-nav {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
     width: 100%;
   }
@@ -188,10 +193,10 @@
   }
   
   .logo-moto {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
-  .nav-buttons {
+  .main-nav {
     grid-template-columns: repeat(2, 1fr);
   }
   

@@ -6,7 +6,10 @@ import { DucatiComponent } from './pages/ducati/ducati';
 import { BmwComponent } from './pages/bmw/bmw';
 import { SuzukiComponent } from './pages/suzuki/suzuki';
 import { HondaComponent } from './pages/honda/honda';
-import { ContactComponent } from './pages/contact/contact'; // ← Nuevo
+import { ContactComponent } from './pages/contact/contact'; 
+import { Financiamiento } from './pages/financiamiento/financiamiento';
+import { SobreNosotros } from './pages/sobre-nosotros/sobre-nosotros';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +19,8 @@ export const routes: Routes = [
   { path: 'bmw', component: BmwComponent},
   { path: 'suzuki', component: SuzukiComponent },
   { path: 'honda', component: HondaComponent },
-  { path: 'contacto', component: ContactComponent }, // ← Nuevo
+  { path: 'contacto', component: ContactComponent }, 
+  { path: 'financiamiento', component: Financiamiento },
+  { path: 'sobre-nosotros', component: SobreNosotros },
   { path: '**', redirectTo: '' }
 ];

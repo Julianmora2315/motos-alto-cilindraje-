@@ -1,0 +1,465 @@
+.financiamiento-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+}
+
+/* Banner Principal */
+.hero-banner {
+  position: relative;
+  height: 500px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1600') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.banner-content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #dc2626;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.8);
+  letter-spacing: 8px;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  font-style: italic;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* Contenedor General */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Introducción */
+.intro-section {
+  background: #000;
+  text-align: center;
+}
+
+.intro-section h2 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
+}
+
+.highlight {
+  color: #dc2626;
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+.intro-text {
+  color: #ccc;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Planes */
+.planes-section {
+  background: #0a0a0a;
+  padding: 4rem 2rem;
+}
+
+.planes-section h2 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+}
+
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.plan-card {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.plan-card.featured {
+  border-color: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  border-color: #dc2626;
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.plan-header h3 {
+  color: #dc2626;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.plan-badge {
+  display: inline-block;
+  background: #333;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.plan-badge.premium {
+  background: #dc2626;
+}
+
+.plan-features {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid #dc2626;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-label {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.feature-value {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.plan-benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-benefits li {
+  color: #ddd;
+  font-size: 0.95rem;
+  padding: 0.6rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.plan-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Requisitos */
+.requisitos-section {
+  background: #000;
+  padding: 4rem 2rem;
+}
+
+.requisitos-section h2 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+}
+
+.requisitos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+}
+
+.requisito-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.requisito-card h4 {
+  color: #dc2626;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.requisito-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requisito-card li {
+  color: #ddd;
+  padding: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.requisito-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+}
+
+/* Aliados */
+.aliados-section {
+  background: #0a0a0a;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.aliados-section h2 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+
+.aliados-subtitle {
+  color: #999;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.aliados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aliado-item {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.aliado-item:hover {
+  border-color: #dc2626;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(220, 38, 38, 0.2);
+}
+
+/* Proceso */
+.proceso-section {
+  background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
+  padding: 4rem 2rem;
+}
+
+.proceso-section h2 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+}
+
+.proceso-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  background: #1a1a1a;
+  border: 2px solid #dc2626;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+.step-number {
+  background: #dc2626;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.step-card h4 {
+  color: #dc2626;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.step-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.step-arrow {
+  color: #dc2626;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* CTA Final */
+.cta-section {
+  background: #000;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.cta-section p {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+}
+
+.cta-button:hover {
+  background: #b91c1c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+  
+  .intro-section h2,
+  .planes-section h2,
+  .requisitos-section h2,
+  .aliados-section h2,
+  .proceso-section h2 {
+    font-size: 2rem;
+  }
+  
+  .planes-grid,
+  .requisitos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plan-card.featured {
+    transform: scale(1);
+  }
+  
+  .proceso-steps {
+    flex-direction: column;
+  }
+  
+  .step-arrow {
+    transform: rotate(90deg);
+  }
+}
